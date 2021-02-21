@@ -29,9 +29,27 @@ export default () => {
             }
         }
     })
+    const mutation = new GraphQLObjectType({
+        name: 'Mutation',
+        fields: {
+            insertAuthor: {
+                args: {
+                    id: {
+                        type: GraphQLInt,
 
+                    },
+                    name: {
+                        type: GraphQLString
+                    }
+                },
+                type: new GraphQLList(Author)
+            },
+
+        }
+    })
     const schema = new GraphQLSchema({
-        query: rootQuery
+        query: rootQuery,
+        mutation: mutation
     })
     console.log(printSchema(schema))
     return schema;

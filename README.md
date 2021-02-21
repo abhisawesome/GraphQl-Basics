@@ -24,3 +24,11 @@ query{
 }
 
 ```
+```
+mutation{
+  result: insertAuthor(id:4,name:"Author 4"){
+    id,
+    name
+  }
+}
+```
