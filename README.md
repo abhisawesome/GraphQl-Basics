@@ -32,3 +32,21 @@ mutation{
   }
 }
 ```
+
+
+# Schema generated
+```
+type Query {
+  getAllAuthors: [Author]
+  getAuthorWithId(id: Int): Author
+}
+
+type Author {
+  id: Int
+  name: String
+}
+
+type Mutation {
+  insertAuthor(id: Int, name: String): [Author]
+}
+```
